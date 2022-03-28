@@ -32,14 +32,14 @@ public class Graph_Constructor {
     int wt;
 
 //  For Weighted graph
-    public Edge(int src, int nbr, int wt) {
+    Edge(int src, int nbr, int wt) {
         this.src = src;
         this.nbr = nbr;
         this.wt = wt;
     }
 
 //  For Unweighted Graph
-    public Edge(int src, int nbr) {
+    Edge(int src, int nbr) {
         this.src = src;
         this.nbr = nbr;
     }
@@ -81,11 +81,11 @@ public class Graph_Constructor {
 //        Traversing Each Vertex
         for(int i = 0  ; i < vtces; i++)
         {
-            System.out.println(i + " : ");
+            System.out.print(i + " : ");
 //          Traversing Each Edge of those Vertex
             for(Edge e : graph[i])
             {
-                System.out.println(" { " + e.src + " , " + e.nbr + " , " + e.wt + " } ");
+                System.out.print("[ " + e.src + " , " + e.nbr + " , " + e.wt + " ]");
             }
             System.out.println();
         }
