@@ -86,3 +86,12 @@ Test Case :
 6
 
  */
+
+/*
+
+Time Complexity:
+O(V+E)
+
+Space Complexity:
+O(V)
+*/
