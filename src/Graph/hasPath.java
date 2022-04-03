@@ -90,3 +90,11 @@ Test Case :
 6
 
  */
+
+/*
+Time Complexity: O(V+E)
+Where V is the number of vertices and E is the number of edges. In the worst case, all the vertices and all the edges will be travelled. The time complexity of the while loop (k log(k)).Which sum up to O(n log(k)).
+
+Space Complexity: O(V)
+It will be the height of the recursion stack, which can be O(V) at max
+*/
