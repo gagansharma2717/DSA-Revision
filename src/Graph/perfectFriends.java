@@ -3,6 +3,8 @@ package Graph;
 import java.io.*;
 import java.util.*;
 
+// Perfect Friends basically Get Connected Components hi hai. Bs End m Comps arraylist m jitni bhi arraylist hai
+// unka cartesian product krke vo count return krna hai
 public class perfectFriends {
     static class Edge{
         int src;

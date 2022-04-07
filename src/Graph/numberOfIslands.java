@@ -43,14 +43,17 @@ public class numberOfIslands {
 
     private static void dfs(int[][] arr, int row , int col , boolean[][] visited )
     {
+//        Checking array out of index, if there is water and also checking if it is already visited or not
         if(row < 0 || col < 0 || row >= arr.length || col >= arr[0].length || arr[row][col] == 1
                 || visited[row][col] == true) {
 
             return;
         }
 
+//        visited mark kiya
         visited[row][col] = true;
 
+//        calls in all 4 directions
         dfs(arr,row + 1 , col,visited);
         dfs(arr,row - 1 , col,visited);
         dfs(arr,row, col + 1,visited);
