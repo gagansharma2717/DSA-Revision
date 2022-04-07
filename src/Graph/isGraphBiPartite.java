@@ -88,7 +88,12 @@ public class isGraphBiPartite {
 
             if(visited[rem.level] != -1)
             {
-                return false;
+//                Checking current level of vertex i.e rem.level with vertex previous level which is
+//                stored in visited array i.e visited[rem.v]. If they both are not same, it means
+//                there are odd number of cycles in graph which means it is not bipartite
+                if(rem.level != visited[rem.v]) {
+                    return false;
+                }
             }
             else
             {

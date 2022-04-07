@@ -79,6 +79,8 @@ public class isGraphCyclic {
         {
             Pair rem = queue.removeFirst();
 
+//            If some vertex that is already visted is coming again that means we have a cycle here.
+//            So we will return true here
             if(visited[rem.v] == true)
             {
                 return true;

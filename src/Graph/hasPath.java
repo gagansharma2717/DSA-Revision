@@ -3,6 +3,7 @@ package Graph;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+//DFS
 public class hasPath {
     static class Edge{
         int src;

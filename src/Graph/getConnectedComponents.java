@@ -2,6 +2,8 @@ package Graph;
 import java.io.*;
 import java.util.*;
 
+// DFS hi hai Bs Preorder m jaate hue vertices ko ek arraylist m store kr liya and main m us arraylist ko ek
+// arraylist of arraylist m fill krke display kr diya
 public class getConnectedComponents {
         static class Edge {
             int src;

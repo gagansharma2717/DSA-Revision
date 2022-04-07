@@ -3,6 +3,7 @@ package Graph;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+// DFS
 public class printAllPaths {
 
     static class Edge{
