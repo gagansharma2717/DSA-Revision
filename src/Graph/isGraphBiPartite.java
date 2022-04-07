@@ -102,7 +102,7 @@ public class isGraphBiPartite {
 
             for(Edge edge : graph[rem.v])
             {
-                if(visited[edge.nbr] != -1)
+                if(visited[edge.nbr] == -1)
                 {
                     queue.add(new Pair(edge.nbr,rem.psf+edge.nbr,rem.level+1));
                 }
