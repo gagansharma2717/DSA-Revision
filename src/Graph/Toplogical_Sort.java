@@ -73,6 +73,11 @@ public class Toplogical_Sort {
 
 }
 
+/* Important Points :
+* Stack mai add post-order m krna h
+* Stack ko print main m jaakr krna hai Agar Post Order m print krenge toh toplogical sort ka reverse print hoga
+* Baaki toh Get Connected Components Jaisi Calls and BFS are visit mark krna and neighbours add krna hi h
+*/
 /*
 Input
 7
