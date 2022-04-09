@@ -76,8 +76,8 @@ public class Toplogical_Sort {
 /* Important Points :
 * Stack mai add post-order m krna h
 * Stack ko print main m jaakr krna hai Agar Post Order m print krenge toh toplogical sort ka reverse print hoga
-* Pre-Order we cannot add in stack or not even print Because in preorder we don't know ki koi Bahr ki Edge hmari
-* Current Vertex pr dependent toh nhi hai
+* Pre-Order we cannot add in stack or not even print Because in preorder we don't know ki koi Bahr ki Edge means
+* Kisi or Component ki Edge hmare Current Vertex pr dependent toh nhi hai.
 * Baaki toh Get Connected Components Jaisi Calls and BFS are visit mark krna and neighbours add krna hi h
 */
 /*
