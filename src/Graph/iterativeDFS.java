@@ -75,3 +75,35 @@ public class iterativeDFS {
     }
 }
 
+/*
+Sample Input
+
+7
+8
+0 1 10
+1 2 10
+2 3 10
+0 3 10
+3 4 10
+4 5 10
+5 6 10
+4 6 10
+2
+
+Sample Output
+2@2
+3@23
+4@234
+6@2346
+5@23465
+0@230
+1@2301
+
+Time Complexity:
+We have just replaced the queue data structure with stack, and the rest of the code remains the same. Hence, the
+time complexity will also remain O(N + E) where N = number of vertices and E = number of edges.
+
+Space Complexity:
+We are using a stack data structure, which will store at max N nodes. Also, we are using a visited array of size N.
+Hence the total space complexity is o(N).
+*/
