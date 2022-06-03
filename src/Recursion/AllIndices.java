@@ -41,7 +41,7 @@ public class AllIndices {
 
         if(arr[idx] == x)
         {
-            freq[counter] = idx;
+            freq[counter-1] = idx;
         }
         return freq;
     }
