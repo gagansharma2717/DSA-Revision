@@ -59,9 +59,35 @@ public class LevelOrderLineWise {
         }
 
     }
+
+    public static void levelOrderLineWise2(Node root) {
+        Queue<Node> mq = new ArrayDeque<>();
+        mq.add(root);
+
+        while(mq.size() > 0 ){
+            // chidlren in current level
+            int cicl = mq.size();
+
+            // loop from 0 to children in current level
+            for(int i = 0 ; i < cicl; i++) {
+                // remove print add children
+                root = mq.remove();
+                System.out.print(root.data + " ");
+
+                for (Node child : root.children) {
+                    mq.add(child);
+                }
+            }
+
+            System.out.println();
+        }
+
+    }
     public static void main(String[] args) {
         int[] arr = {10,20,50,-1,60,-1,-1,30,70,-1,80,110,-1,120,-1,-1,90,-1,-1,40,100,-1,-1,-1};
         Node root = construct(arr);
         levelOrderLineWise(root);
+
+        levelOrderLineWise2(root);
     }
 }
