@@ -1,115 +1,108 @@
 package Binary_Tree;
-import java.io.*;
-import java.util.*;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Stack;
 
 public class PrintKLevelsDown {
-    public static class Node {
+    public static class Node{
         int data;
         Node left;
         Node right;
 
-        Node(int data, Node left, Node right) {
+        public Node(int data, Node left, Node right) {
             this.data = data;
             this.left = left;
             this.right = right;
         }
     }
 
-    public static class Pair {
+    public static class Pair{
         Node node;
         int state;
 
-        Pair(Node node, int state) {
+        public Pair(Node node, int state) {
             this.node = node;
             this.state = state;
         }
     }
 
-    public static Node construct(Integer[] arr) {
+    private static Node construct(Integer[] arr) {
         Node root = new Node(arr[0], null, null);
         Pair rtp = new Pair(root, 1);
 
-        Stack<Pair> st = new Stack<>();
-        st.push(rtp);
+        Stack<Pair> stk = new Stack<>();
+        stk.push(rtp);
 
         int idx = 0;
-        while (st.size() > 0) {
-            Pair top = st.peek();
-            if (top.state == 1) {
+        while(stk.size() > 0){
+            Pair top = stk.peek();
+            if(top.state == 1){
                 idx++;
-                if (arr[idx] != null) {
+                if(arr[idx] != null){
                     top.node.left = new Node(arr[idx], null, null);
                     Pair lp = new Pair(top.node.left, 1);
-                    st.push(lp);
-                } else {
+
+                    stk.push(lp);
+                }else{
                     top.node.left = null;
                 }
 
                 top.state++;
-            } else if (top.state == 2) {
+            }else if(top.state == 2){
                 idx++;
-                if (arr[idx] != null) {
+                if(arr[idx] != null){
                     top.node.right = new Node(arr[idx], null, null);
                     Pair rp = new Pair(top.node.right, 1);
-                    st.push(rp);
-                } else {
+                    stk.push(rp);
+                }else{
                     top.node.right = null;
                 }
-
                 top.state++;
-            } else {
-                st.pop();
+            }else {
+                stk.pop();
             }
         }
 
         return root;
     }
 
-    public static void display(Node node) {
-        if (node == null) {
-            return;
+    private static void printKLevels(Node node, int k) {
+
+        // Negative Base Case
+        if(node == null || k < 0){
+            return ;
         }
 
-        String str = "";
-        str += node.left == null ? "." : node.left.data + "";
-        str += " <- " + node.data + " -> ";
-        str += node.right == null ? "." : node.right.data + "";
-        System.out.println(str);
-
-        display(node.left);
-        display(node.right);
-    }
-
-    public static void printKLevelsDown(Node node, int k){
-        if(node == null || k < 0) return;
-        if(k == 0)
-        {
+        // Positive Base Case
+        if(k == 0 ){
             System.out.println(node.data);
             return;
         }
 
-        printKLevelsDown(node.left, k - 1);
-        printKLevelsDown(node.right,k -1 );
+        // Faith K-1 levels se saare print ho jaayenge
+        printKLevels(node.left, k-1);
+        printKLevels(node.right, k-1);
 
     }
-
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
         Integer[] arr = new Integer[n];
         String[] values = br.readLine().split(" ");
-        for (int i = 0; i < n; i++) {
-            if (values[i].equals("n") == false) {
+        for(int i = 0 ; i < n ; i++){
+            if(!values[i].equals("n")){
                 arr[i] = Integer.parseInt(values[i]);
-            } else {
+            }else{
                 arr[i] = null;
             }
         }
 
         int k = Integer.parseInt(br.readLine());
-
         Node root = construct(arr);
-        printKLevelsDown(root, k);
+        printKLevels(root,k);
+
     }
 
 }
