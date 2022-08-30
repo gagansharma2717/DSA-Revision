@@ -15,7 +15,7 @@ public class LinkedListToStack {
 
         int size() {
             // write your code here
-            list.size();
+            return list.size();
         }
 
         void push(int val) {

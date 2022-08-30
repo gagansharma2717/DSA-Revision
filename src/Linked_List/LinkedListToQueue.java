@@ -17,7 +17,7 @@ public class LinkedListToQueue {
 
         void add(int val) {
             // write your code here
-            list.addLast();
+            list.addLast(val);
         }
 
         int remove() {
@@ -38,5 +38,5 @@ public class LinkedListToQueue {
             return list.getFirst();
         }
     }
-    }
 }
+

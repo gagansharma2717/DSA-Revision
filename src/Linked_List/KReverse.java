@@ -92,7 +92,7 @@ public class KReverse {
                     while(size > 0){
                         int val = head.data;
                         this.removeFirst();
-                        curr.addLast(); // this is will not reverse last group less than k
+                        curr.addLast(val); // this is will not reverse last group less than k
                     }
                 }else {
                     // extracting one group of size k
